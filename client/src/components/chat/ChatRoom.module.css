@@ -1,0 +1,211 @@
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f0f2f5;
+}
+
+.chatHeader {
+  padding: 12px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.userAvatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00a884;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.userAvatar:hover {
+  transform: scale(1.05);
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.onlineStatus {
+  font-size: 12px;
+  color: #4caf50;
+}
+
+.messagesContainer {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-image: linear-gradient(rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100%),
+                    url('data:image/svg+xml,%3Csvg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z" fill="%239C92AC" fill-opacity="0.08" fill-rule="evenodd"/%3E%3C/svg%3E');
+}
+
+.messageWrapper {
+  display: flex;
+  margin: 4px 0;
+}
+
+.currentUser {
+  justify-content: flex-end;
+}
+
+.message {
+  max-width: 65%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.currentUser .message {
+  background-color: #dcf8c6;
+  border-bottom-right-radius: 5px;
+}
+
+.otherUser .message {
+  background-color: #ffffff;
+  border-bottom-left-radius: 5px;
+}
+
+.messageContent {
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  color: #303030;
+}
+
+.messageTime {
+  font-size: 11px;
+  color: #667781;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.typingIndicator {
+  font-size: 12px;
+  color: #667781;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  margin: 10px 0;
+  align-self: flex-start;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: .5; }
+  50% { opacity: 1; }
+  100% { opacity: .5; }
+}
+
+.inputContainer {
+  padding: 16px;
+  background-color: #ffffff;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.messageInput {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 24px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s;
+  background-color: #f0f2f5;
+}
+
+.messageInput:focus {
+  border-color: #00a884;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(0, 168, 132, 0.1);
+}
+
+.sendButton {
+  padding: 10px 20px;
+  background-color: #00a884;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.sendButton:hover {
+  background-color: #008f72;
+  transform: translateY(-1px);
+}
+
+.sendButton:active {
+  transform: translateY(0);
+}
+
+.sendButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .message {
+    max-width: 80%;
+  }
+  
+  .messageInput {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  .sendButton {
+    padding: 8px 16px;
+    min-width: 60px;
+  }
+
+  .userAvatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .userName {
+    font-size: 14px;
+  }
+
+  .chatHeader {
+    padding: 8px 12px;
+  }
+
+  .messagesContainer {
+    padding: 12px;
+  }
+}

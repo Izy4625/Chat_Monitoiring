@@ -1,0 +1,58 @@
+/* רקע מלא לדף */
+.home-container {
+  height: 120vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:green;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* קונטיינר עבור הכפתורים */
+.button-container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7); 
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* עיצוב כפתורים */
+.button {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* כפתור מחבל */
+.terrorist {
+  background-color: #e74c3c; 
+}
+
+.terrorist:hover {
+  background-color: #c0392b; 
+  transform: scale(1.1); 
+}
+
+/* כפתור צבא */
+.army {
+  background-color:hsl(155, 100%, 25%); 
+}
+
+.army:hover {
+  background-color:green; 
+  transform: scale(1.1); 
+}
